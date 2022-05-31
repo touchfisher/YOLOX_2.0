@@ -209,50 +209,37 @@ class Predictor(object):
             confidence = float(score)
             confidence = format(confidence, '.5f')
 
-            if x0 < 0:
-                x0 = 0
-            if x0 > 1023:
-                x0 = 1023
-            if x1 < 0:
-                x1 = 0
-            if x1 > 1023:
-                x1 = 1023
+            # if x0 < 0:
+            #     x0 = 0
+            # if x0 > 1023:
+            #     x0 = 1023
+            # if x1 < 0:
+            #     x1 = 0
+            # if x1 > 1023:
+            #     x1 = 1023
 
-            if y0 < 0:
-                y0 = 0
-            if y0 > 1023:
-                y0 = 1023
-            if y1 < 0:
-                y1 = 0
-            if y1 > 1023:
-                y1 = 1023
+            # if y0 < 0:
+            #     y0 = 0
+            # if y0 > 1023:
+            #     y0 = 1023
+            # if y1 < 0:
+            #     y1 = 0
+            # if y1 > 1023:
+            #     y1 = 1023
 
-            width = x1-x0
-            height = y1-y0
-
-            filename = "submit.txt"
-            #filedir = self.root+filename
-            '''
-            if not os.path.exists(filedir):
-                os.makedirs(filedir)
-            '''
-            #check = res.copy()
-            flag = True
-            temp = {'image_id':img_name,'PredictionString':str(confidence)+" "+str(x0)+" "+str(y0)+" "+str(width)+" "+str(height)}
-            if res==[]:
-                res.append(temp)
-            else:
-                for i in res:
-                    if i['image_id'] == img_name and flag==True:
-                        i['PredictionString']+=" "+str(confidence)+" "+str(x0)+" "+str(y0)+" "+str(width)+" "+str(height)
-                        flag = False
-            if flag==True:
-                res.append(temp)
-            #print(res)
-            '''
-            with open(filename,"a") as f:
-                f.write(str(img_name)+" "+str(confidence)+" "+str(x0)+" "+str(y0)+" "+str(width)+" "+str(height)+"\n")
-            '''
+            # width = x1-x0
+            # height = y1-y0
+            # flag = True
+            # temp = {'image_id':img_name,'PredictionString':str(confidence)+" "+str(x0)+" "+str(y0)+" "+str(width)+" "+str(height)}
+            # if res==[]:
+            #     res.append(temp)
+            # else:
+            #     for i in res:
+            #         if i['image_id'] == img_name and flag==True:
+            #             i['PredictionString']+=" "+str(confidence)+" "+str(x0)+" "+str(y0)+" "+str(width)+" "+str(height)
+            #             flag = False
+            # if flag==True:
+            #     res.append(temp)
         
         vis_res = vis(img, bboxes, scores, cls, cls_conf, self.cls_names)
         return vis_res
@@ -393,9 +380,9 @@ if __name__ == "__main__":
 
     main(exp, args)
 
-    test = pd.DataFrame(res,columns=['image_id','PredictionString'])
-    test.to_csv('submission.csv',index=False)
+    #test = pd.DataFrame(res,columns=['image_id','PredictionString'])
+    #test.to_csv('submission.csv',index=False)
     #test.to_csv('/kaggle/working/submission.csv',index=False)
 
-    print(test.head())
+    #print(test.head())
 
