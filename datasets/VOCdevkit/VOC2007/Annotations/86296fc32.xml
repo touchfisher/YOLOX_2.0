@@ -1,0 +1,1 @@
+<annotation><folder>train</folder><filename>86296fc32.jpg</filename><size><width>1024</width><height>1024</height><depth>3</depth></size><object><name>wheat head</name><pose>Unspecified</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>701</xmin><ymin>284</ymin><xmax>765</xmax><ymax>512</ymax></bndbox></object></annotation>
