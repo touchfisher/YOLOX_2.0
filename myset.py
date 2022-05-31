@@ -12,15 +12,12 @@ class Exp(MyExp):
     def __init__(self):
         super(Exp, self).__init__()
         self.num_classes = 1
-        self.depth = 1.0
-        self.width = 1.0
 
         self.act = "silu"
 
         self.data_num_workers = 2
 
         self.max_epoch = 50
-        self.no_aug_epochs = 15
 
         self.eval_interval = 1
         self.save_history_ckpt = False
